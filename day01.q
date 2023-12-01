@@ -2,11 +2,14 @@ input: read0 `$"Advent23/inputs/day01.txt"
 
 x:input
 
-d1p1:{sum value each raze each 1 -1 #\:/: x except\: .Q.a}
+d1p1:{
+    //Drop alpha characters, take first and last, sum
+    sum value each raze each 1 -1 #\:/: x except\: .Q.a}
 
 
 d1p2:{
     
+    //Define dict of word numbers and string numbers to string numbers
     n:(
         ("one"  );
         ("two"  );
@@ -21,6 +24,7 @@ d1p2:{
     
     n:(enlist each n),'(18#1+til 9);
     
+    //Func that searches for first and last occurance of any word or string number, then replace with string number
     replace:{[n;x]
         r:raze ({ss[x;first y],\:last y}[x;] each n);
         mi:r r[;0] ? min r[;0];
@@ -31,5 +35,6 @@ d1p2:{
     
     x:replace[n;]each x;
     
+    //Run through part 1 for result
     d1p1 x
     }
