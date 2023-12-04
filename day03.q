@@ -12,7 +12,7 @@ test:("467..114..";
 input: read0 `$"Advent23/inputs/day03.txt"
 
 
-d1p1:{[grid]
+d3p1:{[grid]
     
     s:not grid in ".",.Q.n;
     
@@ -75,7 +75,7 @@ d1p1:{[grid]
     sum adjNumbers
     }
         
-d1p2:{[grid]
+d3p2:{[grid]
     
     s:grid="*";
     
